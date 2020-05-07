@@ -7,30 +7,18 @@ using UnityEngine.UI;
 public class ChangeGravity : MonoBehaviour
 {
 
-    //private void Start()
-    //{
-    //    // 初期を下方向
-    //    Physics.gravity = new Vector3(0, -9.8f, 0);
-    //}
-    //void Update()
-    //{
-    //    // 上方向に変更
-    //    if (CustomInput.Interval_InputKeydown(KeyCode.W, 3))
-    //        Physics.gravity = new Vector3(0, 15, 0);
-    //    // 下方向に変更
-    //    if (CustomInput.Interval_InputKeydown(KeyCode.S, 3))
-    //        Physics.gravity = new Vector3(0, -15, 0);
-    //}
+   
 
     private bool changegravity;
     private Rigidbody rig;
-    Vector3 Gravity;
+    private Vector3 Gravity;
 
     // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody>();
         Gravity = new Vector3(0,  -9.8f, 0);
+        changegravity = true;
     }
 
     void FixedUpdate()
@@ -40,22 +28,48 @@ public class ChangeGravity : MonoBehaviour
 
     void Update()
     {
-        if (CustomInput.Interval_InputKeydown(KeyCode.W, 3)) 
+        if (CustomInput.Interval_InputKeydown(KeyCode.Space, 3))
         {
-            GravityGauge.roop = true;
-            transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
-            Gravity = new Vector3(0, 9.8f, 0);  
-        }
+            if (changegravity == true)
+            {
+                GravityGauge.roop = true;
+                transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
+                Gravity = new Vector3(0, 9.8f, 0);
+                changegravity = false;
+                Debug.Log(true);
+            }
 
-        else if (CustomInput.Interval_InputKeydown(KeyCode.S ,3))
-        {
-            GravityGauge.roop = true;
-            transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
-            Gravity = new Vector3(0, -9.8f, 0);
+            else if (changegravity == false)
+            {
+                GravityGauge.roop = true;
+                transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
+                Gravity = new Vector3(0, -9.8f, 0);
+                changegravity = true;
+                Debug.Log(false);
+
+
+            }
+
         }
+       
+
+
+        //if (CustomInput.Interval_InputKeydown(KeyCode.W, 3)) 
+        //{
+        //    GravityGauge.roop = true;
+        //    transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
+        //    Gravity = new Vector3(0, 9.8f, 0);  
+        //}
+
+        //else if (CustomInput.Interval_InputKeydown(KeyCode.S ,3))
+        //{
+        //    GravityGauge.roop = true;
+        //    transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
+        //    Gravity = new Vector3(0, -9.8f, 0);
+        //}
     }
 
-    void UseGravity()
+    private void UseGravity()
     {
         rig.AddForce(Gravity, ForceMode.Acceleration);
     }
