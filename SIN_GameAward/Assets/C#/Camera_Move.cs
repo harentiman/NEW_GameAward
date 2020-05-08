@@ -16,9 +16,12 @@ public class Camera_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 CameraPos = Player.transform.position;
-        //カメラとプレイヤーの位置を同じにする
-        transform.position = new Vector3(CameraPos.x, 6, -17);
+        if (Player != null)     // エラー回避用
+        {
+            Vector3 CameraPos = Player.transform.position;
+            //カメラとプレイヤーの位置を同じにする
+            transform.position = new Vector3(CameraPos.x, 6, -17);
+        }
     }
 
 }

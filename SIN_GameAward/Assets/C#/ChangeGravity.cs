@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class ChangeGravity : MonoBehaviour
 {
 
-   
-
     public static bool changegravity;
     private Rigidbody rig;
     private Vector3 Gravity;
@@ -46,10 +44,7 @@ public class ChangeGravity : MonoBehaviour
                 Gravity = new Vector3(0, -9.8f, 0);
                 changegravity = false;
                 GravityGauge.roop = false;
-
-
             }
-
         }
     }
 

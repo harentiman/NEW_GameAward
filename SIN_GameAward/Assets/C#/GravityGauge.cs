@@ -20,7 +20,6 @@ public class GravityGauge : MonoBehaviour
   // Update is called once per frame
     void Update()
     {
-       
         if (roop)
         {
             //Reduce fill amount over 30 seconds
@@ -28,7 +27,7 @@ public class GravityGauge : MonoBehaviour
         }
         if (UIobj.fillAmount == 1)
         {
-           // StartCoroutine("Gauge");
+            //StartCoroutine("Gauge");
             roop = false;
             UIobj.fillAmount = 0;
         }
