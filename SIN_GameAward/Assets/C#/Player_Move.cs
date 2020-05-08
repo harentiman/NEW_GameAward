@@ -40,25 +40,6 @@ public class Player_Move : MonoBehaviour
         }
     }
 
-    //public float speed = 10f;
-    //float moveX = 0f;
-
-    //Rigidbody rb;
-
-    //void Start()
-    //{
-    //    rb = GetComponent<Rigidbody>();
-    //}
-
-    //void Update()
-    //{
-    //    moveX = Input.GetAxis("Horizontal") * speed;
-    //    Vector3 direction = new Vector3(moveX, 0, 0);
-    //}
-
-    //void FixedUpdate()
-    //{
-    //    rb.velocity = new Vector3(moveX, 0,0);
-    //}
+   
 
 }
