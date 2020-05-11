@@ -34,7 +34,7 @@ public class ChangeGravity : MonoBehaviour
                 transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
                 Gravity = new Vector3(0, 9.8f, 0);
                 changegravity =true;
-                GravityGauge.roop = false;
+                
             }
 
             else if (changegravity == true)
@@ -43,7 +43,7 @@ public class ChangeGravity : MonoBehaviour
                 transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
                 Gravity = new Vector3(0, -9.8f, 0);
                 changegravity = false;
-                GravityGauge.roop = false;
+                
             }
         }
     }
