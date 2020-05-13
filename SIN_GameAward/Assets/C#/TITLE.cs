@@ -14,7 +14,7 @@ public class TITLE : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.anyKey)
         {
             FadeManager.Instance.LoadScene("StageSelect", 2f);
         }
