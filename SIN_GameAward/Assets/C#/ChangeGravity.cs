@@ -26,14 +26,14 @@ public class ChangeGravity : MonoBehaviour
 
     void Update()
     {
-        if (CustomInput.Interval_InputKeydown(KeyCode.Space, 3))
+        if (CustomInput.Interval_InputKeydown(KeyCode.R, 3))
         {
             if (changegravity == false)
             {
                 GravityGauge.roop = true;
                 transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
                 Gravity = new Vector3(0, 9.8f, 0);
-                changegravity =true;
+                changegravity =! changegravity;
                 
             }
 
@@ -42,8 +42,8 @@ public class ChangeGravity : MonoBehaviour
                 GravityGauge.roop = true;
                 transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
                 Gravity = new Vector3(0, -9.8f, 0);
-                changegravity = false;
-                
+                changegravity = !changegravity;
+
             }
         }
     }
