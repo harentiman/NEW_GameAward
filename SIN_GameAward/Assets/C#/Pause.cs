@@ -5,7 +5,6 @@ using UnityEngine;
 public class Pause : MonoBehaviour
 {
     //　ポーズした時に表示するUI
-    [SerializeField]
     private GameObject pauseUI;
 
     // Update is called once per frame
