@@ -1,21 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StageSelect : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Button button;
+
     void Start()
     {
         
     }
-
-    // Update is called once per frame
+        // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            FadeManager.Instance.LoadScene("SampleScene", 2f);
-        }
+       
+    }
+
+    public void OnClick()
+    {
+
+        string s=button.name.ToString();
+        s=s.Substring(s.Length - 3, 3);
+        Debug.Log(s);
+        FadeManager.Instance.LoadScene("stage-" + s, 2f);
     }
 }
