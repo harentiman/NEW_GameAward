@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class gole : MonoBehaviour
 {
     // Start is called before the first frame update
+    public static string a;
     void Start()
     {
         
@@ -35,7 +36,7 @@ public class gole : MonoBehaviour
             mod += 2;
             syou += 1;
             string b = st.Substring(0, st.Length - 3);
-            string a = b + syou + ("-")+mod;
+            a = b + syou + ("-")+mod;
 
 
             //Debug.Log(str);
@@ -43,6 +44,8 @@ public class gole : MonoBehaviour
             Debug.Log(mod);
             Debug.Log(b);
             Debug.Log(a);
+
+
             FadeManager.Instance.LoadScene(a, 2f);
 
           

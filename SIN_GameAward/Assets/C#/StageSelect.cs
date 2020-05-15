@@ -15,12 +15,11 @@ public class StageSelect : MonoBehaviour
         // Update is called once per frame
     void Update()
     {
-       
+
     }
 
     public void OnClick()
     {
-
         string s=button.name.ToString();
         s=s.Substring(s.Length - 3, 3);
         Debug.Log(s);
