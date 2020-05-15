@@ -10,7 +10,7 @@ public class Retry : MonoBehaviour
     {
         if ((col.gameObject.tag=="Retrys") || (col.gameObject.tag == "Enemys"))
         {
-            FadeManager.Instance.LoadScene("SampleScene", 2);
+            FadeManager.Instance.LoadScene(SceneManager.GetActiveScene().name, 2);
         }
     }
 
