@@ -4,28 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
-
 public class Audio : MonoBehaviour
 {
+    public AudioMixer audioMixer;
 
-
-    public AudioMixer mixer;
-    public Slider BGM;
-    public Slider SE;
+    public Slider BGMSlider;
+    public Slider SESlider;
 
     // Start is called before the first frame update
     void Start()
     {
-     
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        mixer.SetFloat("BGM", BGM.value);
-        mixer.SetFloat("SE", SE.value);
-
+        audioMixer.SetFloat("BGM", BGMSlider.value);
+        audioMixer.SetFloat("SE", SESlider.value);
     }
 }

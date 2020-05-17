@@ -6,6 +6,13 @@ public class Pause : MonoBehaviour
 {
     //　ポーズした時に表示するUI
     public GameObject pauseUI;
+    public GameObject optionUI;
+    public static GameObject CopyPauseUI;
+
+    void Start()
+    {
+        CopyPauseUI = pauseUI;
+    }
 
     // Update is called once per frame
     void Update()
@@ -14,6 +21,7 @@ public class Pause : MonoBehaviour
         {
             //　ポーズUIのアクティブ、非アクティブを切り替え
             pauseUI.SetActive(!pauseUI.activeSelf);
+            optionUI.SetActive(false);
 
             //　ポーズUIが表示されてる時は停止
             if (pauseUI.activeSelf)
@@ -27,4 +35,5 @@ public class Pause : MonoBehaviour
             }
         }
     }
+    
 }

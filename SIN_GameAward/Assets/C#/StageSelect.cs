@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class StageSelect : MonoBehaviour
 {
     public Button button;
+    public static string s;
 
     void Start()
     {
@@ -20,7 +21,7 @@ public class StageSelect : MonoBehaviour
 
     public void OnClick()
     {
-        string s=button.name.ToString();
+        s=button.name.ToString();
         s=s.Substring(s.Length - 3, 3);
         Debug.Log(s);
         FadeManager.Instance.LoadScene("stage-" + s, 2f);
