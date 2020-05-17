@@ -17,9 +17,9 @@ public class Player_Move : MonoBehaviour
         velocity = Vector3.zero;
 
         // 左右移動
-        if (Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < 0)
+        if (Input.GetKey(KeyCode.A)) //|| Input.GetAxis("Horizontal") < 0)
             velocity.x -= 1;
-        if (Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0)
+        if (Input.GetKey(KeyCode.D)) //|| Input.GetAxis("Horizontal") > 0)
             velocity.x += 1;
 
         // 速度ベクトルの長さを1秒でmoveSpeedだけ進むように調整します
@@ -42,7 +42,5 @@ public class Player_Move : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-   
 
 }
