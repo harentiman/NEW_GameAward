@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class gole : MonoBehaviour
 {
+
     // Start is called before the first frame update
     public static string a;
     void Start()
@@ -22,12 +23,18 @@ public class gole : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-        {//stage01
-
+        { 
+            //stage01
 
             //string s = i.ToString();                            //ビルド番号をstring型にする
             //st=st.Substring(0, st.Length - s.Length);           //ステージ名からビルド番号以外取る
             //string str = st + s;                                //組み合わせる
+
+            // 最終ステージクリア後、タイトルに戻る
+            if (SceneManager.GetActiveScene().buildIndex == 17)
+            {
+                FadeManager.Instance.LoadScene("title", 2);
+            }
 
             string st = SceneManager.GetActiveScene().name;     //ステージ名
             int i = SceneManager.GetActiveScene().buildIndex;   //ステージビルド番号
@@ -38,17 +45,14 @@ public class gole : MonoBehaviour
             string b = st.Substring(0, st.Length - 3);
             a = b + syou + ("-")+mod;
 
-
             //Debug.Log(str);
             Debug.Log(syou);
             Debug.Log(mod);
             Debug.Log(b);
             Debug.Log(a);
 
-
             FadeManager.Instance.LoadScene(a, 2f);
-
-          
         }
     }  
+
 }
