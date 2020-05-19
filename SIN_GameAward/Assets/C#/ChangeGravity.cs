@@ -25,7 +25,8 @@ public class ChangeGravity : MonoBehaviour
         // 重力処理
         UseGravity();
         // ジャンプ処理
-        if (CustomInput.Interval_InputKeydown(KeyCode.Space,0.5f))
+        //if (CustomInput.Interval_InputKeydown(KeyCode.Space,0.5f))
+        if (Input.GetKey(KeyCode.Space))
         {
             if (jumppingFlug == true)
             {
@@ -68,13 +69,13 @@ public class ChangeGravity : MonoBehaviour
     void Jump()
     {
         jumppingFlug = false;
-        rig.AddForce(Vector3.up * 300);
+        rig.AddForce(Vector3.up * 250);
     }
 
     void ReturnJump()
     {
         jumppingFlug = false;
-        rig.AddForce(Vector3.down * 300);
+        rig.AddForce(Vector3.down * 250);
     }
 
     private void UseGravity()
