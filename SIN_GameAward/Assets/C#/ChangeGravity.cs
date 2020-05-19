@@ -25,8 +25,8 @@ public class ChangeGravity : MonoBehaviour
         // 重力処理
         UseGravity();
         // ジャンプ処理
-        //if (CustomInput.Interval_InputKeydown(KeyCode.Space,0.5f))
-        if (Input.GetKey(KeyCode.Space))
+        if (CustomInput.Interval_InputKeydown(KeyCode.Space,1)) // ジャンプ後、1fのクールタイム
+        //if (Input.GetKey(KeyCode.Space))
         {
             if (jumppingFlug == true)
             {
@@ -44,7 +44,7 @@ public class ChangeGravity : MonoBehaviour
 
     void Update()
     {
-        if (CustomInput.Interval_InputKeydown(KeyCode.R,3))
+        if (CustomInput.Interval_InputKeydown(KeyCode.R,1)) // 反転後、1fのクールタイム
         {
             if (changegravity == false)
             {
