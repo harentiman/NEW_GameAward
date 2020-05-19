@@ -11,6 +11,7 @@ public class ChangeGravity : MonoBehaviour
     private Rigidbody rig;
     private Vector3 Gravity;
     bool jumppingFlug = true;           //無限ジャンプ防止
+    bool gravityFlug = true;            //重力操作制限
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,11 @@ public class ChangeGravity : MonoBehaviour
     void FixedUpdate()
     {
         // 重力処理
-        UseGravity();
+        if (gravityFlug == true)
+        {
+            UseGravity();
+        }
+
         // ジャンプ処理
         if (CustomInput.Interval_InputKeydown(KeyCode.Space,1)) // ジャンプ後、1fのクールタイム
         //if (Input.GetKey(KeyCode.Space))
@@ -44,24 +49,27 @@ public class ChangeGravity : MonoBehaviour
 
     void Update()
     {
-        if (CustomInput.Interval_InputKeydown(KeyCode.R,1)) // 反転後、1fのクールタイム
+        if (gravityFlug == true)
         {
-            if (changegravity == false)
+            if (CustomInput.Interval_InputKeydown(KeyCode.R, 1)) // 反転後、1fのクールタイム
             {
-                GravityGauge.roop = true;
-                transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
-                Gravity = new Vector3(0, 9.8f, 0);
-                changegravity =true;
-                
-            }
+                if (changegravity == false)
+                {
+                    GravityGauge.roop = true;
+                    transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
+                    Gravity = new Vector3(0, 9.8f, 0);
+                    changegravity = true;
 
-            else if (changegravity == true)
-            {
-                GravityGauge.roop = true;
-                transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
-                Gravity = new Vector3(0, -9.8f, 0);
-                changegravity = false;
-                
+                }
+
+                else if (changegravity == true)
+                {
+                    GravityGauge.roop = true;
+                    transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
+                    Gravity = new Vector3(0, -9.8f, 0);
+                    changegravity = false;
+
+                }
             }
         }
     }
@@ -85,12 +93,19 @@ public class ChangeGravity : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        // 無限ジャンプ防止処理
+        // 無限ジャンプ防止
         if ((col.gameObject.tag == "Ground"))
         {
             jumppingFlug = true;
         }
+        // ゴール時、操作不能
+        if ((col.gameObject.tag == "Goal"))
+        {
+            jumppingFlug = false;
+            gravityFlug = false;
+        }
     }
+
 }
 
 
