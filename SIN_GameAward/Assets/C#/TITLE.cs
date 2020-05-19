@@ -16,7 +16,7 @@ public class TITLE : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            FadeManager.Instance.LoadScene("StageSelect", 2f);
+            FadeManager.Instance.LoadScene("StageSelect", 1);
         }
     }
 }

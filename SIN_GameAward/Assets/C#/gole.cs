@@ -51,7 +51,8 @@ public class gole : MonoBehaviour
             Debug.Log(b);
             Debug.Log(a);
 
-            FadeManager.Instance.LoadScene(a, 2f);
+            // 次のステージ
+            FadeManager.Instance.LoadScene(a, 2);
         }
     }  
 

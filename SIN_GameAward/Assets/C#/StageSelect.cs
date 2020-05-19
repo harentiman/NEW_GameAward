@@ -24,6 +24,6 @@ public class StageSelect : MonoBehaviour
         s=button.name.ToString();
         s=s.Substring(s.Length - 3, 3);
         Debug.Log(s);
-        FadeManager.Instance.LoadScene("stage-" + s, 2f);
+        FadeManager.Instance.LoadScene("stage-" + s, 2);
     }
 }
