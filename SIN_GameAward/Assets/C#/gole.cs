@@ -28,10 +28,11 @@ public class gole : MonoBehaviour
             //stage01
 
             Gole = true;
-
-            //string s = i.ToString();                            //ビルド番号をstring型にする
-            //st=st.Substring(0, st.Length - s.Length);           //ステージ名からビルド番号以外取る
-            //string str = st + s;                                //組み合わせる
+            string st = SceneManager.GetActiveScene().name;     //ステージ名
+            int i = SceneManager.GetActiveScene().buildIndex;   //ステージビルド番号
+            string s = i.ToString();                            //ビルド番号をstring型にする
+            st=st.Substring(0, st.Length - s.Length);           //ステージ名からビルド番号以外取る
+            string str = st + s;                                //組み合わせる
 
             // 最終ステージクリア後、タイトルに戻る
             if (SceneManager.GetActiveScene().buildIndex == 17)
@@ -39,26 +40,17 @@ public class gole : MonoBehaviour
                 FadeManager.Instance.LoadScene("title", 2);
             }
 
-            string st = SceneManager.GetActiveScene().name;     //ステージ名
-            int i = SceneManager.GetActiveScene().buildIndex;   //ステージビルド番号
+
             stagenumber = SceneManager.GetActiveScene().buildIndex;
-            int syou = (SceneManager.GetActiveScene().buildIndex - 2) / 4; //stage-4-1の4の部分計算
-            int mod = (SceneManager.GetActiveScene().buildIndex - 2) % 4;  //stage-4-1の1の部分計算
-            mod += 2;
-            syou += 1;
+            int syou = (SceneManager.GetActiveScene().buildIndex) - 5; //stage-4-1の4の部分計算
+            int mod = (SceneManager.GetActiveScene().buildIndex) % 5;  //stage-4-1の1の部分計算
             string b = st.Substring(0, st.Length - 3);
-            a = b + syou + ("-")+mod;
+            syou += 1;
+            a = b + syou + ("-") + mod;
 
-            //Debug.Log(str);
-            Debug.Log(syou);
-            Debug.Log(mod);
-            Debug.Log(b);
-            Debug.Log(a);
 
-            
-            
             // 次のステージ
-            FadeManager.Instance.LoadScene(a, 2);
+            FadeManager.Instance.LoadScene(str, 2);
         }
     }  
 

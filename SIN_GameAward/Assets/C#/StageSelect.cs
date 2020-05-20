@@ -8,6 +8,7 @@ public class StageSelect : MonoBehaviour
 {
    
     public Button button;
+    public int stagenumber;
     public static string s;
 
     void Start()
@@ -22,10 +23,6 @@ public class StageSelect : MonoBehaviour
 
     public void OnClick()
     {
-        s=button.name.ToString();
-        s=s.Substring(s.Length - 3, 3);
-        button.interactable = false;
-        Debug.Log(s);
-        FadeManager.Instance.LoadScene("stage-" + s, 2);
+        FadeManager.Instance.LoadScene("stage" + stagenumber, 2);
     }
 }
