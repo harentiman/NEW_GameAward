@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseStageSelect : MonoBehaviour
 {
+    public Button StageSelect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,10 @@ public class PauseStageSelect : MonoBehaviour
     
     public void OnClick()
     {
+        StageSelect.interactable = false;
+        Time.timeScale = 1.0f;
         FadeManager.Instance.LoadScene("StageSelect", 2f);
+
+        PlayerPrefs.Save();
     }
 }

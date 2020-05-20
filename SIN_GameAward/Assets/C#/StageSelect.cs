@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class StageSelect : MonoBehaviour
 {
+   
     public Button button;
     public static string s;
 
@@ -16,13 +17,14 @@ public class StageSelect : MonoBehaviour
         // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void OnClick()
     {
         s=button.name.ToString();
         s=s.Substring(s.Length - 3, 3);
+        button.interactable = false;
         Debug.Log(s);
         FadeManager.Instance.LoadScene("stage-" + s, 2);
     }

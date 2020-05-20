@@ -19,6 +19,7 @@ public class Game_Exit : MonoBehaviour
     public void OnClick()
     {
         Debug.Log("ゲーム終了");
+        PlayerPrefs.DeleteAll();
 
         #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
