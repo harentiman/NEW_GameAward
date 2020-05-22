@@ -18,7 +18,15 @@ public class Player_Move : MonoBehaviour
         velocity = Vector3.zero;
 
         // 左右移動
-        if (MoveFlug == true)
+
+        if (MoveFlug == true && ChangeGravity.changegravity == true)
+        {
+            if (Input.GetKey(KeyCode.A)) //|| Input.GetAxis("Horizontal") < 0)
+                velocity.x += 1;
+            if (Input.GetKey(KeyCode.D)) //|| Input.GetAxis("Horizontal") > 0)
+                velocity.x -= 1;
+        }
+        if (MoveFlug == true && ChangeGravity.changegravity == false)
         {
             if (Input.GetKey(KeyCode.A)) //|| Input.GetAxis("Horizontal") < 0)
                 velocity.x -= 1;
@@ -26,8 +34,9 @@ public class Player_Move : MonoBehaviour
                 velocity.x += 1;
         }
 
-        // 速度ベクトルの長さを1秒でmoveSpeedだけ進むように調整します
-        velocity = velocity.normalized * moveSpeed * Time.deltaTime;
+
+            // 速度ベクトルの長さを1秒でmoveSpeedだけ進むように調整します
+            velocity = velocity.normalized * moveSpeed * Time.deltaTime;
 
         // いずれかの方向に移動している場合
         if (velocity.magnitude > 0)

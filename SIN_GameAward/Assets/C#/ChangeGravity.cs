@@ -10,7 +10,7 @@ public class ChangeGravity : MonoBehaviour
     public static bool changegravity;
     private Rigidbody rig;
     private Vector3 Gravity;
-    bool jumppingFlug = true;           //無限ジャンプ防止
+    public static bool jumppingFlug = true;           //無限ジャンプ防止
     bool gravityFlug = true;            //重力操作制限
 
     // Start is called before the first frame update
