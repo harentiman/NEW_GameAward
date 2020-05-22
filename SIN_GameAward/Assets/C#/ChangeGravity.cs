@@ -12,7 +12,8 @@ public class ChangeGravity : MonoBehaviour
     private Rigidbody rig;
     private Vector3 Gravity;
     public static bool jumppingFlug = true;           //無限ジャンプ防止
-    bool gravityFlug = true;                          //重力操作制限
+    bool gravityFlug = true;                          //重力操作制
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -56,8 +57,9 @@ public class ChangeGravity : MonoBehaviour
             {
                 if (changegravity == false)
                 {
+                    animator.SetTrigger("isCameraRotation");
                     GravityGauge.roop = true;
-                    transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
+                    //transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
                     Gravity = new Vector3(0, 9.8f, 0);
                     changegravity = true;
 
@@ -65,8 +67,10 @@ public class ChangeGravity : MonoBehaviour
 
                 else if (changegravity == true)
                 {
+                    animator.SetTrigger("isCameraReRotation");
+                    animator.SetTrigger("isIdle");
                     GravityGauge.roop = true;
-                    transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
+                    //transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
                     Gravity = new Vector3(0, -9.8f, 0);
                     changegravity = false;
 
