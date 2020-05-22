@@ -9,7 +9,7 @@ public class GravityGauge : MonoBehaviour
     
     public Image UIobj;
     public static bool roop;
-    float countTime = 1; // クールタイムゲージのカウントを変更
+    float countTime = 3; // クールタイムゲージのカウントを変更
 
     // Start is called before the first frame update
     void Start()
