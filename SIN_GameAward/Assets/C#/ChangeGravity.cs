@@ -30,20 +30,18 @@ public class ChangeGravity : MonoBehaviour
         }
 
         // ジャンプ処理
-        //if (CustomInput.Interval_InputKeydown(KeyCode.Space,1)) // ジャンプ後、1fのクールタイム
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (CustomInput.Interval_InputKeydown(KeyCode.Space,1)) // ジャンプ後、1fのクールタイム
+        //if (Input.GetKeyDown(KeyCode.Space))
         {
             if (jumppingFlug == true)
             {
                 if (changegravity == false)
                 {
                     Jump();         // 通常時のジャンプ処理
-                    StartCoroutine("jump");
                 }
                 else if (changegravity == true)
                 {
                     ReturnJump();   // 反転時のジャンプ処理
-                    StartCoroutine("jump");
                 }
             }
         }
@@ -53,7 +51,7 @@ public class ChangeGravity : MonoBehaviour
     {
         if (gravityFlug == true)
         {
-            if (CustomInput.Interval_InputKeydown(KeyCode.R, 3)) // 反転後、1fのクールタイム
+            if (CustomInput.Interval_InputKeydown(KeyCode.R, 1)) // 反転後、1fのクールタイム
             {
                 if (changegravity == false)
                 {
@@ -78,14 +76,14 @@ public class ChangeGravity : MonoBehaviour
 
     void Jump()
     {
-        //jumppingFlug = false;
+        jumppingFlug = false;
         rig.AddForce(Vector3.up * 250);
 
     }
 
     void ReturnJump()
     {
-        //jumppingFlug = false;
+        jumppingFlug = false;
         rig.AddForce(Vector3.down * 250);
     }
 
@@ -107,25 +105,7 @@ public class ChangeGravity : MonoBehaviour
             jumppingFlug = false;
             gravityFlug = false;
         }
-        
     }
-
-    //void OnCollisionExit(Collision col)
-    //{
-    //    if ((col.gameObject.tag == "Ground"))
-    //    {
-    //        jumppingFlug = false;
-    //    }
-    //}
-
-    IEnumerator jump()
-    {
-        jumppingFlug = false;
-        yield return new WaitForSeconds(1f);
-        jumppingFlug = true;
-    }
-
-
 
 }
 
