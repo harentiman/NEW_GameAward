@@ -11,7 +11,7 @@ public class ChangeGravity : MonoBehaviour
     private Rigidbody rig;
     private Vector3 Gravity;
     public static bool jumppingFlug = true;           //無限ジャンプ防止
-    bool gravityFlug = true;            //重力操作制限
+    bool gravityFlug = true;                          //重力操作制限
 
     // Start is called before the first frame update
     void Start()
@@ -110,13 +110,13 @@ public class ChangeGravity : MonoBehaviour
         
     }
 
-    void OnCollisionExit(Collision col)
-    {
-        if ((col.gameObject.tag == "Ground"))
-        {
-            jumppingFlug = false;
-        }
-    }
+    //void OnCollisionExit(Collision col)
+    //{
+    //    if ((col.gameObject.tag == "Ground"))
+    //    {
+    //        jumppingFlug = false;
+    //    }
+    //}
 
     IEnumerator jump()
     {
