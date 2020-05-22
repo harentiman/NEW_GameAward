@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CustomInputKey;   // 入力制限、３秒間のクールタイム
+using CustomInputKey;                   // 重力反転3秒クールタイム 
+using CustomInputKey.CustomInputKey2;   // ジャンプ1秒クールタイム
 using UnityEngine.UI;
 
 public class ChangeGravity : MonoBehaviour
@@ -30,7 +31,7 @@ public class ChangeGravity : MonoBehaviour
         }
 
         // ジャンプ処理
-        if (CustomInput.Interval_InputKeydown(KeyCode.Space,1)) // ジャンプ後、1fのクールタイム
+        if (CustomInput2.Interval_InputKeydown2(KeyCode.Space,1)) // ジャンプ後、1fのクールタイム
         //if (Input.GetKeyDown(KeyCode.Space))
         {
             if (jumppingFlug == true)
@@ -51,7 +52,7 @@ public class ChangeGravity : MonoBehaviour
     {
         if (gravityFlug == true)
         {
-            if (CustomInput.Interval_InputKeydown(KeyCode.R, 1)) // 反転後、1fのクールタイム
+            if (CustomInput.Interval_InputKeydown(KeyCode.R, 3)) // 反転後、3fのクールタイム
             {
                 if (changegravity == false)
                 {
