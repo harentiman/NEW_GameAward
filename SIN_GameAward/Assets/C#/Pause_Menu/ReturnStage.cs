@@ -10,7 +10,7 @@ public class ReturnStage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class ReturnStage : MonoBehaviour
 
     public void OnClick()
     {
-        ReturnStageButton.interactable = false;
+        //ReturnStageButton.interactable = false;
         Time.timeScale = 1f;
         Pause.CopyPauseUI.SetActive(!Pause.CopyPauseUI.activeSelf);
     }
