@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class TITLE : MonoBehaviour
 {
+
+    bool OnlySelect = true;     // キーの多重処理防止
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +17,14 @@ public class TITLE : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey)
+        if (OnlySelect == true)
         {
-            FadeManager.Instance.LoadScene("StageSelect", 1);
+            if (Input.anyKey)
+            {
+                FadeManager.Instance.LoadScene("StageSelect", 1);
+                OnlySelect = false;
+            }
         }
     }
+
 }

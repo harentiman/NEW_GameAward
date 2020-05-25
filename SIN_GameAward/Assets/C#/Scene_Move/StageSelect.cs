@@ -11,6 +11,8 @@ public class StageSelect : MonoBehaviour
     public int stagenumber;
     public static string s;
 
+    bool OnlySelect = true;     // キーの多重処理防止
+
     void Start()
     {
         
@@ -23,6 +25,11 @@ public class StageSelect : MonoBehaviour
 
     public void OnClick()
     {
-        FadeManager.Instance.LoadScene("stage" + stagenumber, 2);
+        if (OnlySelect == true)
+        {
+            FadeManager.Instance.LoadScene("stage" + stagenumber, 2);
+            OnlySelect = false;
+        }
     }
+
 }
