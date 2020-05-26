@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class gole : MonoBehaviour
 {
-    public static bool Gole;
+    public static bool Gole=false;
     public static int stagenumber;
     // Start is called before the first frame update
     public static string a;
@@ -50,6 +50,7 @@ public class gole : MonoBehaviour
 
 
             // 次のステージ
+            Gole = false;
             FadeManager.Instance.LoadScene(str, 2);
         }
     }  

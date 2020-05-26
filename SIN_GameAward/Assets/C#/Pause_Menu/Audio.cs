@@ -10,17 +10,39 @@ public class Audio : MonoBehaviour
 
     public Slider BGMSlider;
     public Slider SESlider;
+    private float BGMvolume;
+    private float SEvolume;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        BGMSlider.value = PlayerPrefs.GetFloat("BGM", 0);
+        SESlider.value = PlayerPrefs.GetFloat("SE", 0);
+        if (audioMixer.GetFloat("BGM", out BGMvolume))
+        {
+            BGMSlider.value = BGMvolume;
+        }
+        if (audioMixer.GetFloat("BGM", out SEvolume))
+        {
+            SESlider.value = SEvolume;
+        }
+    }
+
+    void Update()
+    {
+        BGM(BGMSlider);
+        SE(SESlider);
     }
 
     // Update is called once per frame
-    void Update()
+    public void BGM(Slider slider)
     {
-        audioMixer.SetFloat("BGM", BGMSlider.value);
-        audioMixer.SetFloat("SE", SESlider.value);
+        audioMixer.SetFloat("BGM", slider.value);
+    }
+
+    public void SE(Slider slider)
+    {
+        audioMixer.SetFloat("SE", slider.value);
     }
 }
