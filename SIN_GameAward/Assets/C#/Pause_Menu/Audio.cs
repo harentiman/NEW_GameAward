@@ -23,7 +23,7 @@ public class Audio : MonoBehaviour
         {
             BGMSlider.value = BGMvolume;
         }
-        if (audioMixer.GetFloat("BGM", out SEvolume))
+        if (audioMixer.GetFloat("SE", out SEvolume))
         {
             SESlider.value = SEvolume;
         }

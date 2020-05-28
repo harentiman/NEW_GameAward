@@ -7,6 +7,7 @@ public class Option : MonoBehaviour
 {
     public GameObject pause;
     public GameObject option;
+    public Selectable mySelectable;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class Option : MonoBehaviour
     {
         option.SetActive(!option.activeSelf);
         pause.SetActive(!option.activeSelf);
+        mySelectable.Select();
         Debug.Log("option");
     }
 }

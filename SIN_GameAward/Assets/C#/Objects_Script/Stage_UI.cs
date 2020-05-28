@@ -8,7 +8,6 @@ public class Stage_UI : MonoBehaviour
 
     float fadeSpeed = 0.0075f;              //透明度が変わるスピードを管理
     float red, green, blue, alfa;           //パネルの色、不透明度を管理
-
     bool isFadeOut = false;                 //フェードアウト処理の開始、完了を管理するフラグ
     bool isFadeIn = false;                  //フェードイン処理の開始、完了を管理するフラグ
 

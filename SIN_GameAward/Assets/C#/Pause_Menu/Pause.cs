@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Pause : MonoBehaviour
     public GameObject pauseUI;
     public GameObject optionUI;
     public static GameObject CopyPauseUI;
+    public Selectable mySelectable;
+
 
     void Start()
     {
@@ -22,6 +25,8 @@ public class Pause : MonoBehaviour
             //　ポーズUIのアクティブ、非アクティブを切り替え
             pauseUI.SetActive(!pauseUI.activeSelf);
             optionUI.SetActive(false);
+            mySelectable.Select();
+           
 
             //　ポーズUIが表示されてる時は停止
             if (pauseUI.activeSelf)
