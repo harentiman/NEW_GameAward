@@ -24,9 +24,8 @@ public class Pause : MonoBehaviour
         {
             //　ポーズUIのアクティブ、非アクティブを切り替え
             pauseUI.SetActive(!pauseUI.activeSelf);
-            optionUI.SetActive(false);
             mySelectable.Select();
-           
+            optionUI.SetActive(false);
 
             //　ポーズUIが表示されてる時は停止
             if (pauseUI.activeSelf)
