@@ -24,8 +24,8 @@ public class Enemy_Move : MonoBehaviour
 
         switch (Move_Mode)
         {
-            case "Floar":
-                Move_Floar();
+            case "Floor":
+                Move_Floor();
                 break;
 
             case "Ceiling":
@@ -42,7 +42,7 @@ public class Enemy_Move : MonoBehaviour
         }
     }
 
-    private void Move_Floar()
+    private void Move_Floor()
     {
         if (X_delta * Mathf.Cos(Time.time * Speed) >= 0)
         {
