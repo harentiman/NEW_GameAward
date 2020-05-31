@@ -32,11 +32,11 @@ public class Enemy_Move : MonoBehaviour
                 Move_Ceiling();
                 break;
 
-            case "LeftSide":
+            case "Left":
                 Move_LeftSide();
                 break;
 
-            case "RightSide":
+            case "Right":
                 Move_RightSide();
                 break;
         }
