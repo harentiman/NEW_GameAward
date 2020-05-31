@@ -70,7 +70,7 @@ public class Enemy_Move : MonoBehaviour
         }
     }
 
-    private void Move_LeftSide()
+    private void Move_RightSide()
     {
         if (Y_delta * Mathf.Sin(Time.time * Speed) >= 0)
         {
@@ -84,7 +84,7 @@ public class Enemy_Move : MonoBehaviour
         }
     }
 
-    private void Move_RightSide()
+    private void Move_LeftSide()
     {
         if (Y_delta * Mathf.Sin(Time.time * Speed) >= 0)
         {
