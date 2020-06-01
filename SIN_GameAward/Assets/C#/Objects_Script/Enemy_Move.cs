@@ -5,7 +5,7 @@ public class Enemy_Move : MonoBehaviour
 
     Vector3 pos;                                     // 現在の位置
     Vector3 rotation;
-    public string Move_Mode;
+    public int  Move_Mode;
     public float X_delta;   // 左右移動距離
     public float Y_delta;   // 上下移動距離
     public float Speed;     // 移動速度
@@ -24,19 +24,19 @@ public class Enemy_Move : MonoBehaviour
 
         switch (Move_Mode)
         {
-            case "Floor":
+            case 1:   //Floor
                 Move_Floor();
                 break;
 
-            case "Ceiling":
+            case 2: //Ceiling
                 Move_Ceiling();
                 break;
 
-            case "Left":
+            case 3:    //Left
                 Move_LeftSide();
                 break;
 
-            case "Right":
+            case 5:   //Right
                 Move_RightSide();
                 break;
         }
