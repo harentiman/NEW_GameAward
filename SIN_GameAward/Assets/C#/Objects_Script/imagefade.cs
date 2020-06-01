@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class imagefade : MonoBehaviour
 {
-    float fadeSpeed = 0.0075f;              //透明度が変わるスピードを管理
+    float fadeSpeed = 0.001f;              //透明度が変わるスピードを管理
     float red, green, blue, alfa;           //パネルの色、不透明度を管理
     bool isFadeOut = false;                 //フェードアウト処理の開始、完了を管理するフラグ
     private Image fadetext;                  //透明度を変更するパネルのイメージ
