@@ -9,12 +9,14 @@ public class Pause : MonoBehaviour
     public GameObject pauseUI;
     public GameObject optionUI;
     public static GameObject CopyPauseUI;
+    public static GameObject CopyOptionUI;
     public Selectable mySelectable;
 
 
     void Start()
     {
         CopyPauseUI = pauseUI;
+        CopyOptionUI = optionUI;
     }
 
     // Update is called once per frame
