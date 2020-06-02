@@ -14,17 +14,18 @@ public class Fast_Select : MonoBehaviour
         mySelectable.Select();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SetSelectable();
+        }
+    }
+
     public void SetSelectable()
     {
-        //　タブキーを押されたらSelectOnRightに選択された物をフォーカスする
-        //if (Input.GetKeyDown(KeyCode.S))
-        //{
-        //    EventSystem.current.SetSelectedGameObject(mySelectable.navigation.selectOnDown.gameObject);
-        //}
-        //else if(Input.GetKeyDown(KeyCode.D))
-        //{
-        //    EventSystem.current.SetSelectedGameObject(mySelectable.navigation.selectOnUp.gameObject);
-        //}
+        mySelectable.Select();
+
     }
 }
 

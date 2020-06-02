@@ -10,7 +10,6 @@ public class Pause : MonoBehaviour
     public GameObject optionUI;
     public static GameObject CopyPauseUI;
     public static GameObject CopyOptionUI;
-    public Selectable mySelectable;
 
 
     void Start()
@@ -26,7 +25,6 @@ public class Pause : MonoBehaviour
         {
             //　ポーズUIのアクティブ、非アクティブを切り替え
             pauseUI.SetActive(!pauseUI.activeSelf);
-            mySelectable.Select();
             optionUI.SetActive(false);
 
             //　ポーズUIが表示されてる時は停止

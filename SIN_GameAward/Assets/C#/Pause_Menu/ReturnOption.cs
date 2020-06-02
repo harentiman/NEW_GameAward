@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class ReturnOption : MonoBehaviour
 {
+
+    public Selectable mySelectable;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +23,8 @@ public class ReturnOption : MonoBehaviour
 
     public void OnClick()
     {
-        Pause.CopyPauseUI.SetActive(!Pause.CopyPauseUI.activeSelf);
-        Pause.CopyOptionUI.SetActive(!Pause.CopyOptionUI.activeSelf);
+        Pause.CopyPauseUI.SetActive(true);
+        Pause.CopyOptionUI.SetActive(false);
+        mySelectable.Select();
     }
 }

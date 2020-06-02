@@ -23,8 +23,8 @@ public class Option : MonoBehaviour
 
     public void OnClick()
     {
-        option.SetActive(!option.activeSelf);
-        pause.SetActive(!option.activeSelf);
+        option.SetActive(true);
+        pause.SetActive(false);
         mySelectable.Select();
         Debug.Log("option");
     }
