@@ -8,6 +8,11 @@ public class Player_Move : MonoBehaviour
     [SerializeField] private Vector3 velocity;              // 移動方向
     [SerializeField] private float moveSpeed = 5.0f;        // 移動速度
     bool MoveFlug = true;                                   // 移動制限
+    void Start()
+    {
+
+    }
+
 
     void Update()
     {
@@ -22,16 +27,31 @@ public class Player_Move : MonoBehaviour
         if (MoveFlug == true && ChangeGravity.changegravity == true)
         {
             if (Input.GetKey(KeyCode.A)) //|| Input.GetAxis("Horizontal") < 0)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
                 velocity.x += 1;
+            }
             if (Input.GetKey(KeyCode.D)) //|| Input.GetAxis("Horizontal") > 0)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, -180, 0));
                 velocity.x -= 1;
+            }
+           
         }
         if (MoveFlug == true && ChangeGravity.changegravity == false)
         {
             if (Input.GetKey(KeyCode.A)) //|| Input.GetAxis("Horizontal") < 0)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
                 velocity.x -= 1;
+            }
+               
             if (Input.GetKey(KeyCode.D)) //|| Input.GetAxis("Horizontal") > 0)
+            {
+                transform.rotation = Quaternion.Euler(new Vector3(0, -180, 0));
                 velocity.x += 1;
+            }
+                
         }
 
 

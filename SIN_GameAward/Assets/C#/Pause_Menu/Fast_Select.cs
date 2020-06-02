@@ -18,15 +18,11 @@ public class Fast_Select : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SetSelectable();
+            mySelectable.Select();
         }
     }
 
-    public void SetSelectable()
-    {
-        mySelectable.Select();
 
-    }
 }
 
 
