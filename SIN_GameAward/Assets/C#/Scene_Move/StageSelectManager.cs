@@ -22,7 +22,7 @@ public class StageSelectManager : MonoBehaviour
     public Button stage13;
     public Button stage14;
     public Button stage15;
-
+    int i;
 
     // Start is called before the first frame update
     void Start()
@@ -35,9 +35,6 @@ public class StageSelectManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        
-
         if (stage_num >= 2)
         {
             stage2.interactable = true;
@@ -87,7 +84,6 @@ public class StageSelectManager : MonoBehaviour
         {
             stage11.interactable = true;
             
-
         }
         if (stage_num >= 12)
         {
@@ -138,65 +134,64 @@ public class StageSelectManager : MonoBehaviour
         }
         if (gole.stagenumber >= 6)
         {
-            stage2.interactable = true;
+            stage6.interactable = true;
             PlayerPrefs.SetInt("SCORE", 6);
             PlayerPrefs.Save();
         }
         if (gole.stagenumber >= 7)
         {
-            stage3.interactable = true;
+            stage7.interactable = true;
             PlayerPrefs.SetInt("SCORE", 7);
             PlayerPrefs.Save();
         }
         if (gole.stagenumber >= 8)
         {
-            stage4.interactable = true;
+            stage8.interactable = true;
             PlayerPrefs.SetInt("SCORE", 8);
             PlayerPrefs.Save();
         }
         if (gole.stagenumber >= 9)
         {
-            stage5.interactable = true;
+            stage9.interactable = true;
             PlayerPrefs.SetInt("SCORE", 9);
             PlayerPrefs.Save();
         }
         if (gole.stagenumber >= 10)
         {
-            stage2.interactable = true;
+            stage10.interactable = true;
             PlayerPrefs.SetInt("SCORE", 10);
             PlayerPrefs.Save();
         }
         if (gole.stagenumber >= 11)
         {
-            stage3.interactable = true;
+            stage11.interactable = true;
             PlayerPrefs.SetInt("SCORE", 11);
             PlayerPrefs.Save();
         }
         if (gole.stagenumber >= 12)
         {
-            stage4.interactable = true;
+            stage12.interactable = true;
             PlayerPrefs.SetInt("SCORE", 12);
             PlayerPrefs.Save();
         }
         if (gole.stagenumber >= 13)
         {
-            stage5.interactable = true;
+            stage13.interactable = true;
             PlayerPrefs.SetInt("SCORE", 13);
             PlayerPrefs.Save();
         }
         if (gole.stagenumber >= 14)
         {
-            stage4.interactable = true;
+            stage14.interactable = true;
             PlayerPrefs.SetInt("SCORE", 14);
             PlayerPrefs.Save();
         }
         if (gole.stagenumber >= 15)
         {
-            stage5.interactable = true;
+            stage15.interactable = true;
             PlayerPrefs.SetInt("SCORE", 15);
             PlayerPrefs.Save();
         }
-
     }
 }
 
