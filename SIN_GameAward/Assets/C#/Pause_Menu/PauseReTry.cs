@@ -26,7 +26,7 @@ public class PauseReTry: MonoBehaviour
         Time.timeScale = 1;
 
         // Player削除
-        GameObject obj = GameObject.Find("Player");
+        GameObject obj = GameObject.FindGameObjectWithTag("Player");
         Destroy(obj);
 
         FadeManager.Instance.LoadScene(SceneManager.GetActiveScene().name, 2f);

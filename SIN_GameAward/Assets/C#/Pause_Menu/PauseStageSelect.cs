@@ -25,7 +25,7 @@ public class PauseStageSelect : MonoBehaviour
         Time.timeScale = 1.0f;
 
         // Player削除
-        GameObject obj = GameObject.Find("Player");
+        GameObject obj = GameObject.FindGameObjectWithTag("Player");
         Destroy(obj);
 
         FadeManager.Instance.LoadScene("StageSelect", 2f);

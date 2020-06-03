@@ -54,9 +54,8 @@ public class Player_Move : MonoBehaviour
                 
         }
 
-
-            // 速度ベクトルの長さを1秒でmoveSpeedだけ進むように調整します
-            velocity = velocity.normalized * moveSpeed * Time.deltaTime;
+         // 速度ベクトルの長さを1秒でmoveSpeedだけ進むように調整します
+         velocity = velocity.normalized * moveSpeed * Time.deltaTime;
 
         // いずれかの方向に移動している場合
         if (velocity.magnitude > 0)
@@ -72,6 +71,8 @@ public class Player_Move : MonoBehaviour
         if ((col.gameObject.tag == "Retrys") || (col.gameObject.tag == "Enemys"))
         {
             Destroy(this.gameObject);
+            GameObject obj = GameObject.FindGameObjectWithTag("Enemys");
+            Destroy(obj);
         }
         // ゴール時、操作不能
         if ((col.gameObject.tag == "Goal"))
