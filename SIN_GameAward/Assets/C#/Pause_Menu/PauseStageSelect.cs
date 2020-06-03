@@ -23,6 +23,11 @@ public class PauseStageSelect : MonoBehaviour
     {
         StageSelect.interactable = false;
         Time.timeScale = 1.0f;
+
+        // Player削除
+        GameObject obj = GameObject.Find("Player");
+        Destroy(obj);
+
         FadeManager.Instance.LoadScene("StageSelect", 2f);
 
         PlayerPrefs.Save();

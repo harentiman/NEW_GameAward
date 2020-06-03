@@ -24,6 +24,11 @@ public class PauseReTry: MonoBehaviour
     {
         ReTryButton.interactable = false;
         Time.timeScale = 1;
+
+        // Player削除
+        GameObject obj = GameObject.Find("Player");
+        Destroy(obj);
+
         FadeManager.Instance.LoadScene(SceneManager.GetActiveScene().name, 2f);
     }
 }
