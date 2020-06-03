@@ -24,6 +24,7 @@ public class PauseStageSelect : MonoBehaviour
         StageSelect.interactable = false;
         Time.timeScale = 1.0f;
 
+
         // Player削除
         GameObject obj = GameObject.FindGameObjectWithTag("Player");
         Destroy(obj);

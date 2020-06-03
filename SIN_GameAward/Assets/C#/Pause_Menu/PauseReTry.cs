@@ -29,6 +29,7 @@ public class PauseReTry: MonoBehaviour
         GameObject obj = GameObject.FindGameObjectWithTag("Player");
         Destroy(obj);
 
+
         FadeManager.Instance.LoadScene(SceneManager.GetActiveScene().name, 2f);
     }
 }

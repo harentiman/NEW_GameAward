@@ -73,6 +73,7 @@ public class Player_Move : MonoBehaviour
             Destroy(this.gameObject);
             GameObject obj = GameObject.FindGameObjectWithTag("Enemys");
             Destroy(obj);
+
         }
         // ゴール時、操作不能
         if ((col.gameObject.tag == "Goal"))
