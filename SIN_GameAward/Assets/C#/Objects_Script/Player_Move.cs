@@ -70,10 +70,11 @@ public class Player_Move : MonoBehaviour
         // リトライ時に消滅（操作不能）
         if ((col.gameObject.tag == "Retrys") || (col.gameObject.tag == "Enemys"))
         {
+            // Player削除
             Destroy(this.gameObject);
+            // Enemy削除（位置リセット）
             GameObject obj = GameObject.FindGameObjectWithTag("Enemys");
             Destroy(obj);
-
         }
         // ゴール時、操作不能
         if ((col.gameObject.tag == "Goal"))
