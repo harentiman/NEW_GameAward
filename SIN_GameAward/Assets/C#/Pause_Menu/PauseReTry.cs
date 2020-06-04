@@ -29,10 +29,6 @@ public class PauseReTry: MonoBehaviour
         GameObject obj = GameObject.FindGameObjectWithTag("Player");
         Destroy(obj);
 
-        // Enemy削除（位置リセット）
-        GameObject ene = GameObject.FindGameObjectWithTag("Enemys");
-        Destroy(ene);
-
 
         FadeManager.Instance.LoadScene(SceneManager.GetActiveScene().name, 2f);
     }

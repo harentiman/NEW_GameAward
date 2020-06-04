@@ -72,10 +72,9 @@ public class Player_Move : MonoBehaviour
         {
             // Player削除
             Destroy(this.gameObject);
-            // Enemy削除（位置リセット）
-            GameObject obj = GameObject.FindGameObjectWithTag("Enemys");
-            Destroy(obj);
+            Enemy_Move.isMove = false;
         }
+
         // ゴール時、操作不能
         if ((col.gameObject.tag == "Goal"))
         {
