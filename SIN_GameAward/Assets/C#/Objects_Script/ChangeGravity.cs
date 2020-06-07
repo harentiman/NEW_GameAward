@@ -59,8 +59,9 @@ public class ChangeGravity : MonoBehaviour
                 {
                     animator.SetTrigger("isCameraRotation");
                     GravityGauge.roop = true;
-                    //transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
+                    transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
                     Gravity = new Vector3(0, 9.8f, 0);
+                    transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
                     changegravity = true;
 
                 }
@@ -70,8 +71,9 @@ public class ChangeGravity : MonoBehaviour
                     animator.SetTrigger("isCameraReRotation");
                     animator.SetTrigger("isIdle");
                     GravityGauge.roop = true;
-                    //transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
                     Gravity = new Vector3(0, -9.8f, 0);
+                    transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
+
                     changegravity = false;
 
                 }

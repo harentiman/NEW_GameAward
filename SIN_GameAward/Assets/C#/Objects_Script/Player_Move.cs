@@ -8,6 +8,8 @@ public class Player_Move : MonoBehaviour
     [SerializeField] private Vector3 velocity;              // 移動方向
     [SerializeField] private float moveSpeed = 5.0f;        // 移動速度
     bool MoveFlug = true;                                   // 移動制限
+    public Animator animator;
+
     void Start()
     {
 
@@ -16,6 +18,8 @@ public class Player_Move : MonoBehaviour
 
     void Update()
     {
+        animator.SetTrigger("Take001");
+
         //Debug.Log(Input.GetAxis("Horizontal"));
         //Debug.Log(Input.GetJoystickNames()[0]=="");
 
@@ -28,12 +32,12 @@ public class Player_Move : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.A)) //|| Input.GetAxis("Horizontal") < 0)
             {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                transform.rotation = Quaternion.Euler(new Vector3(180, -90, 0));
                 velocity.x += 1;
             }
             if (Input.GetKey(KeyCode.D)) //|| Input.GetAxis("Horizontal") > 0)
             {
-                transform.rotation = Quaternion.Euler(new Vector3(0, -180, 0));
+                transform.rotation = Quaternion.Euler(new Vector3(180, 90, 0));
                 velocity.x -= 1;
             }
            
@@ -42,13 +46,13 @@ public class Player_Move : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.A)) //|| Input.GetAxis("Horizontal") < 0)
             {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
                 velocity.x -= 1;
             }
                
             if (Input.GetKey(KeyCode.D)) //|| Input.GetAxis("Horizontal") > 0)
             {
-                transform.rotation = Quaternion.Euler(new Vector3(0, -180, 0));
+                transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
                 velocity.x += 1;
             }
                 
