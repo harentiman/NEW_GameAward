@@ -4583,6 +4583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
   moveSpeed: 8
+  animator: {fileID: 791630194}
 --- !u!54 &1769996454
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4612,6 +4613,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 791630194}
+  Player: {fileID: 791630194}
+  sound1: {fileID: 0}
+  sound2: {fileID: 0}
 --- !u!114 &1769996456
 MonoBehaviour:
   m_ObjectHideFlags: 0
