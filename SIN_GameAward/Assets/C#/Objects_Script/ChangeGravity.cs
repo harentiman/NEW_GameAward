@@ -39,8 +39,7 @@ public class ChangeGravity : MonoBehaviour
         }
 
         // ジャンプ処理
-        if (CustomInput2.Interval_InputKeydown2(KeyCode.Space,1)) // ジャンプ後、1fのクールタイム
-        //if (Input.GetKeyDown(KeyCode.Space))
+        if (CustomInput2.Interval_InputKeydown2(KeyCode.Space,0.5f)) // ジャンプ後、クールタイム
         {
             if (jumppingFlug == true)
             {
