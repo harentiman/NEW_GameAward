@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CustomInputKey.CustomInputKey2;   // ジャンプ1秒クールタイム
 
 public class Player_Move : MonoBehaviour
 {
@@ -18,7 +19,8 @@ public class Player_Move : MonoBehaviour
 
     void Update()
     {
-        animator.SetTrigger("Take001");
+        //animator.SetBool("isIdle",true);
+       
 
         //Debug.Log(Input.GetAxis("Horizontal"));
         //Debug.Log(Input.GetJoystickNames()[0]=="");
@@ -32,34 +34,53 @@ public class Player_Move : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.A)) //|| Input.GetAxis("Horizontal") < 0)
             {
+                animator.SetBool("iswalk", true);
                 transform.rotation = Quaternion.Euler(new Vector3(180, -90, 0));
                 velocity.x += 1;
             }
             if (Input.GetKey(KeyCode.D)) //|| Input.GetAxis("Horizontal") > 0)
             {
+                animator.SetBool("iswalk", true);
                 transform.rotation = Quaternion.Euler(new Vector3(180, 90, 0));
                 velocity.x -= 1;
             }
-           
+            
         }
+        else
+        {
+            animator.SetBool("isIdle", true);
+            animator.SetBool("iswalk", false);
+
+        }
+
         if (MoveFlug == true && ChangeGravity.changegravity == false)
         {
             if (Input.GetKey(KeyCode.A)) //|| Input.GetAxis("Horizontal") < 0)
             {
+                animator.SetBool("iswalk", true);
                 transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
                 velocity.x -= 1;
             }
-               
+
             if (Input.GetKey(KeyCode.D)) //|| Input.GetAxis("Horizontal") > 0)
             {
+                animator.SetBool("iswalk", true);
                 transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
                 velocity.x += 1;
             }
-                
+
+        }
+        else
+        {
+
+            animator.SetBool("isIdle", true);
+            animator.SetBool("iswalk",false);
+
         }
 
-         // 速度ベクトルの長さを1秒でmoveSpeedだけ進むように調整します
-         velocity = velocity.normalized * moveSpeed * Time.deltaTime;
+
+        // 速度ベクトルの長さを1秒でmoveSpeedだけ進むように調整します
+        velocity = velocity.normalized * moveSpeed * Time.deltaTime;
 
         // いずれかの方向に移動している場合
         if (velocity.magnitude > 0)
@@ -71,9 +92,11 @@ public class Player_Move : MonoBehaviour
     }
     void OnCollisionEnter(Collision col)
     {
+
         // リトライ時に消滅（操作不能）
         if ((col.gameObject.tag == "Retrys") || (col.gameObject.tag == "Enemys"))
         {
+           
             // Player削除
             Destroy(this.gameObject);
             Enemy_Move.isMove = false;

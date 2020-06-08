@@ -14,6 +14,7 @@ public class ChangeGravity : MonoBehaviour
     public static bool jumppingFlug = true;           //無限ジャンプ防止
     bool gravityFlug = true;                          //重力操作制
     public Animator animator;
+    public Animator Player;
 
     // Start is called before the first frame update
     void Start()
@@ -68,6 +69,7 @@ public class ChangeGravity : MonoBehaviour
 
                 else if (changegravity == true)
                 {
+                   
                     animator.SetTrigger("isCameraReRotation");
                     animator.SetTrigger("isIdle");
                     GravityGauge.roop = true;
@@ -83,15 +85,21 @@ public class ChangeGravity : MonoBehaviour
 
     void Jump()
     {
+        Player.SetBool("isjump", true);
         jumppingFlug = false;
         rig.AddForce(Vector3.up * 280);
+        StartCoroutine("jump");
+
 
     }
 
     void ReturnJump()
     {
+        Player.SetBool("isjump", true);
         jumppingFlug = false;
-        rig.AddForce(Vector3.down * 280);
+        StartCoroutine("jump");
+        animator.SetBool("isjump", false);
+
     }
 
     private void UseGravity()
@@ -104,6 +112,8 @@ public class ChangeGravity : MonoBehaviour
         // 無限ジャンプ防止
         if ((col.gameObject.tag == "Ground"))
         {
+            animator.SetBool("isjump", false);
+            Debug.Log("isjump   true");
             jumppingFlug = true;
         }
         // ゴール時、操作不能
@@ -113,6 +123,13 @@ public class ChangeGravity : MonoBehaviour
             gravityFlug = false;
         }
     }
+    IEnumerator jump()
+    {
+        yield return new WaitForSeconds(1);
+        rig.AddForce(Vector3.down * 280);
+    }
+
+
 
 }
 
