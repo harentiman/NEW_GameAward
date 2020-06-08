@@ -16,12 +16,18 @@ public class ChangeGravity : MonoBehaviour
     public Animator animator;
     public Animator Player;
 
+    public AudioClip sound1;
+    public AudioClip sound2;
+
+    AudioSource AudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody>();
         Gravity = new Vector3(0,  -9.8f, 0);
         changegravity = false;
+        AudioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -64,7 +70,7 @@ public class ChangeGravity : MonoBehaviour
                     Gravity = new Vector3(0, 9.8f, 0);
                     transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
                     changegravity = true;
-
+                    AudioSource.PlayOneShot(sound2);
                 }
 
                 else if (changegravity == true)
@@ -77,7 +83,7 @@ public class ChangeGravity : MonoBehaviour
                     transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 0, 1));
 
                     changegravity = false;
-
+                    AudioSource.PlayOneShot(sound2);
                 }
             }
         }
@@ -115,6 +121,7 @@ public class ChangeGravity : MonoBehaviour
             animator.SetBool("isjump", false);
             Debug.Log("isjump   true");
             jumppingFlug = true;
+            AudioSource.PlayOneShot(sound1);
         }
         // ゴール時、操作不能
         if ((col.gameObject.tag == "Goal"))
