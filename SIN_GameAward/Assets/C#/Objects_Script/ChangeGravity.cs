@@ -117,7 +117,7 @@ public class ChangeGravity : MonoBehaviour
         // 無限ジャンプ防止
         if ((col.gameObject.tag == "Ground"))
         {
-            animator.SetBool("isjump", false);
+            Player.SetBool("isjump", false);
             Debug.Log("isjump   true");
             jumppingFlug = true;
             AudioSource.PlayOneShot(sound1);
