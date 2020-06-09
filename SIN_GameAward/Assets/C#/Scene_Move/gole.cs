@@ -35,9 +35,9 @@ public class gole : MonoBehaviour
             string str = st + s;                                //組み合わせる
 
             // 最終ステージクリア後、タイトルに戻る
-            if (SceneManager.GetActiveScene().buildIndex == 17)
+            if (SceneManager.GetActiveScene().buildIndex == 16)
             {
-                FadeManager.Instance.LoadScene("title", 2);
+                FadeManager.Instance.LoadScene("StageSelect", 2);
             }
 
 
