@@ -45,11 +45,15 @@ public class ChangeGravity : MonoBehaviour
             {
                 if (changegravity == false)
                 {
+                    Player.SetBool("isjump", true);
                     Jump();         // 通常時のジャンプ処理
+                    //Player.SetBool("isjump", false);
                 }
                 else if (changegravity == true)
                 {
+                    Player.SetBool("isjump", true);
                     ReturnJump();   // 反転時のジャンプ処理
+                    //Player.SetBool("isjump", false);
                 }
             }
         }
@@ -67,7 +71,6 @@ public class ChangeGravity : MonoBehaviour
                     GravityGauge.roop = true;
                     transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
                     Gravity = new Vector3(0, 9.8f, 0);
-                    transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 0, 1));
                     changegravity = true;
                     AudioSource.PlayOneShot(sound2);
                 }
@@ -90,20 +93,17 @@ public class ChangeGravity : MonoBehaviour
 
     void Jump()
     {
-        Player.SetBool("isjump", true);
+        
         jumppingFlug = false;
         rig.AddForce(Vector3.up * 280);
-        StartCoroutine("jump");
-
-
+       
     }
 
     void ReturnJump()
     {
-        Player.SetBool("isjump", true);
+        
         jumppingFlug = false;
-        StartCoroutine("jump");
-        animator.SetBool("isjump", false);
+        rig.AddForce(Vector3.down * 280);
 
     }
 
@@ -129,12 +129,7 @@ public class ChangeGravity : MonoBehaviour
             gravityFlug = false;
         }
     }
-    IEnumerator jump()
-    {
-        yield return new WaitForSeconds(1);
-        rig.AddForce(Vector3.down * 280);
-    }
-
+    
 
 
 }

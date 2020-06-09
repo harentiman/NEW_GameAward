@@ -11,6 +11,7 @@ public class Player_Move : MonoBehaviour
     bool MoveFlug = true;                                   // 移動制限
     public Animator animator;
 
+
     void Start()
     {
 
@@ -37,20 +38,22 @@ public class Player_Move : MonoBehaviour
                 animator.SetBool("iswalk", true);
                 transform.rotation = Quaternion.Euler(new Vector3(180, -90, 0));
                 velocity.x += 1;
+               
+
             }
             if (Input.GetKey(KeyCode.D)) //|| Input.GetAxis("Horizontal") > 0)
             {
                 animator.SetBool("iswalk", true);
                 transform.rotation = Quaternion.Euler(new Vector3(180, 90, 0));
                 velocity.x -= 1;
+               
+
             }
-            
+
         }
         else
         {
-            animator.SetBool("isIdle", true);
             animator.SetBool("iswalk", false);
-
         }
 
         if (MoveFlug == true && ChangeGravity.changegravity == false)
@@ -60,6 +63,7 @@ public class Player_Move : MonoBehaviour
                 animator.SetBool("iswalk", true);
                 transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
                 velocity.x -= 1;
+               
             }
 
             if (Input.GetKey(KeyCode.D)) //|| Input.GetAxis("Horizontal") > 0)
@@ -67,15 +71,14 @@ public class Player_Move : MonoBehaviour
                 animator.SetBool("iswalk", true);
                 transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
                 velocity.x += 1;
+                
+
             }
 
         }
         else
         {
-
-            animator.SetBool("isIdle", true);
             animator.SetBool("iswalk",false);
-
         }
 
 
