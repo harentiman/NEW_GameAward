@@ -18,7 +18,6 @@ public class ChangeGravity : MonoBehaviour
 
     public AudioClip sound1;
     public AudioClip sound2;
-
     AudioSource AudioSource;
 
     // Start is called before the first frame update
