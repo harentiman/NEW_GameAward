@@ -28,6 +28,7 @@ public class gole : MonoBehaviour
             //stage01
 
             Gole = true;
+            stagenumber = SceneManager.GetActiveScene().buildIndex;
             int i = SceneManager.GetActiveScene().buildIndex;   //ステージビルド番号
             string s = i.ToString();                            //ビルド番号をstring型にする
 
