@@ -10,22 +10,16 @@ public class Player_Move : MonoBehaviour
     [SerializeField] private float moveSpeed = 5.0f;        // 移動速度
     bool MoveFlug = true;                                   // 移動制限
     public Animator animator;
-
+    public GameObject obj;
 
     void Start()
     {
-
+        animator = obj.GetComponent<Animator>();
     }
 
 
     void Update()
     {
-        //animator.SetBool("isIdle",true);
-       
-
-        //Debug.Log(Input.GetAxis("Horizontal"));
-        //Debug.Log(Input.GetJoystickNames()[0]=="");
-
         // AD入力から、X平面(水平な地面)を移動する方向(velocity)を得ます
         velocity = Vector3.zero;
 
@@ -33,55 +27,45 @@ public class Player_Move : MonoBehaviour
 
         if (MoveFlug == true && ChangeGravity.changegravity == true)
         {
-            if (Input.GetKey(KeyCode.A)|| Input.GetAxis("Horizontal") < 0.1)
+            if (Input.GetKey(KeyCode.A)|| Input.GetAxis("Horizontal") < -0.1)
             {
                 animator.SetBool("iswalk", true);
-                transform.rotation = Quaternion.Euler(new Vector3(180, -90, 0));
+                transform.rotation = Quaternion.Euler(new Vector3(180, 0, 0));
                 velocity.x += 1;
-               
 
             }
-            if (Input.GetKey(KeyCode.D)|| Input.GetAxis("Horizontal") > 0.1)
+            else if (Input.GetKey(KeyCode.D)|| Input.GetAxis("Horizontal") > 0.1)
             {
                 animator.SetBool("iswalk", true);
-                transform.rotation = Quaternion.Euler(new Vector3(180, 90, 0));
+                transform.rotation = Quaternion.Euler(new Vector3(180, 180, 0));
                 velocity.x -= 1;
                
-
             }
-
         }
-        else
+       
+        else if (MoveFlug == true && ChangeGravity.changegravity == false)
         {
-            animator.SetBool("iswalk", false);
-        }
 
-        if (MoveFlug == true && ChangeGravity.changegravity == false)
-        {
-            if (Input.GetKey(KeyCode.A)|| Input.GetAxis("Horizontal") < 0.1)
+            if (Input.GetKey(KeyCode.A)|| Input.GetAxis("Horizontal") < -0.1)
             {
                 animator.SetBool("iswalk", true);
-                transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
+                transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
                 velocity.x -= 1;
                
             }
 
-            if (Input.GetKey(KeyCode.D)|| Input.GetAxis("Horizontal") > 0.1)
+            else if (Input.GetKey(KeyCode.D)|| Input.GetAxis("Horizontal") > 0.1)
             {
                 animator.SetBool("iswalk", true);
-                transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+                transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
                 velocity.x += 1;
-                
+            }
+            else
+            {
+                animator.SetBool("iswalk", false);
 
             }
-
         }
-        else
-        {
-            animator.SetBool("iswalk",false);
-        }
-
-
         // 速度ベクトルの長さを1秒でmoveSpeedだけ進むように調整します
         velocity = velocity.normalized * moveSpeed * Time.deltaTime;
 

@@ -64,6 +64,29 @@ namespace CustomInputKey
 
             return false;
         }
+
+        public static bool Interval_InputKeydown(string name, float intervalSeconds)
+        {
+            timer = Time.time;
+
+            if (Input.GetKeyDown(name) && timer - buttonDownTime >= intervalSeconds)
+            {
+                if (preventContinuityInput == false)
+                {
+                    preventContinuityInput = true;
+                    buttonDownTime = Time.time;
+                    return true;
+                }
+                else if (preventContinuityInput)
+                {
+                    preventContinuityInput = false;
+                    buttonDownTime = Time.time;
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 
     namespace CustomInputKey2
@@ -111,6 +134,29 @@ namespace CustomInputKey
                 timer = Time.time;
 
                 if (Input.GetKeyDown(key) && timer - buttonDownTime >= intervalSeconds)
+                {
+                    if (preventContinuityInput == false)
+                    {
+                        preventContinuityInput = true;
+                        buttonDownTime = Time.time;
+                        return true;
+                    }
+                    else if (preventContinuityInput)
+                    {
+                        preventContinuityInput = false;
+                        buttonDownTime = Time.time;
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+
+            public static bool Interval_InputKeydown2(string name, float intervalSeconds)
+            {
+                timer = Time.time;
+
+                if (Input.GetKeyDown(name) && timer - buttonDownTime >= intervalSeconds)
                 {
                     if (preventContinuityInput == false)
                     {

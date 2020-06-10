@@ -38,7 +38,7 @@ public class ChangeGravity : MonoBehaviour
         }
 
         // ジャンプ処理
-        if (CustomInput2.Interval_InputKeydown2(KeyCode.Space,1)) // ジャンプ後、クールタイム
+        if (CustomInput2.Interval_InputKeydown2(KeyCode.Space,1)|| CustomInput2.Interval_InputKeydown2("joystick button 0", 1)) // ジャンプ後、クールタイム
         {
             if (jumppingFlug == true)
             {
@@ -62,7 +62,7 @@ public class ChangeGravity : MonoBehaviour
     {
         if (gravityFlug == true)
         {
-            if (CustomInput.Interval_InputKeydown(KeyCode.R, 3)) // 反転後、3fのクールタイム
+            if (CustomInput.Interval_InputKeydown(KeyCode.R, 3)|| CustomInput.Interval_InputKeydown("joystick button 2", 3) || CustomInput.Interval_InputKeydown("joystick button 3", 3)) // 反転後、3fのクールタイム
             {
                 if (changegravity == false)
                 {
