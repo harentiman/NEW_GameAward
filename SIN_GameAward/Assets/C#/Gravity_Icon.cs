@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Gravity_Icon : MonoBehaviour
 {
     public Image gravity_icon;
-    float speed = 120f;
+    float speed = 180f;
     private float time = 0;
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class Gravity_Icon : MonoBehaviour
             gravity_icon.enabled = true;
            
         }
-        if (time>=1.5f)
+        if (time>=1.2f)
         {
             //Debug.Log("hirama");
             gravity_icon.enabled = false;
