@@ -1795,10 +1795,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 7850002871005431861, guid: 3e0004bf25e04d94a8416240186c9196,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: cab8988c7152151478b8f4e20e674d3b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.7
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3169,10 +3169,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 7850002871005431861, guid: 3e0004bf25e04d94a8416240186c9196,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: cab8988c7152151478b8f4e20e674d3b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.7
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3826,10 +3826,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 7850002871005431861, guid: 3e0004bf25e04d94a8416240186c9196,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: cab8988c7152151478b8f4e20e674d3b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.7
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6423,6 +6423,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   moveSpeed: 8
   animator: {fileID: 791630194}
+  obj: {fileID: 0}
 --- !u!54 &1769996454
 Rigidbody:
   m_ObjectHideFlags: 0
