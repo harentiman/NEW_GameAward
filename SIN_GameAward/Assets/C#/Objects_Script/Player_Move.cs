@@ -33,7 +33,7 @@ public class Player_Move : MonoBehaviour
 
         if (MoveFlug == true && ChangeGravity.changegravity == true)
         {
-            if (Input.GetKey(KeyCode.A)) //|| Input.GetAxis("Horizontal") < 0)
+            if (Input.GetKey(KeyCode.A)|| Input.GetAxis("Horizontal") < 0.1)
             {
                 animator.SetBool("iswalk", true);
                 transform.rotation = Quaternion.Euler(new Vector3(180, -90, 0));
@@ -41,7 +41,7 @@ public class Player_Move : MonoBehaviour
                
 
             }
-            if (Input.GetKey(KeyCode.D)) //|| Input.GetAxis("Horizontal") > 0)
+            if (Input.GetKey(KeyCode.D)|| Input.GetAxis("Horizontal") > 0.1)
             {
                 animator.SetBool("iswalk", true);
                 transform.rotation = Quaternion.Euler(new Vector3(180, 90, 0));
@@ -58,7 +58,7 @@ public class Player_Move : MonoBehaviour
 
         if (MoveFlug == true && ChangeGravity.changegravity == false)
         {
-            if (Input.GetKey(KeyCode.A)) //|| Input.GetAxis("Horizontal") < 0)
+            if (Input.GetKey(KeyCode.A)|| Input.GetAxis("Horizontal") < 0.1)
             {
                 animator.SetBool("iswalk", true);
                 transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
@@ -66,7 +66,7 @@ public class Player_Move : MonoBehaviour
                
             }
 
-            if (Input.GetKey(KeyCode.D)) //|| Input.GetAxis("Horizontal") > 0)
+            if (Input.GetKey(KeyCode.D)|| Input.GetAxis("Horizontal") > 0.1)
             {
                 animator.SetBool("iswalk", true);
                 transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
