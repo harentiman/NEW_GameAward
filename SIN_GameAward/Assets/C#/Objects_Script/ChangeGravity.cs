@@ -19,6 +19,7 @@ public class ChangeGravity : MonoBehaviour
     public AudioClip sound1;
     public AudioClip sound2;
     AudioSource AudioSource;
+    float time = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,9 @@ public class ChangeGravity : MonoBehaviour
         // ジャンプ処理
         if (CustomInput2.Interval_InputKeydown2(KeyCode.Space,1)|| CustomInput2.Interval_InputKeydown2("joystick button 0", 1)) // ジャンプ後、クールタイム
         {
+            
+            time+= Time.deltaTime;
+            Debug.Log(time);
             if (jumppingFlug == true)
             {
                 if (changegravity == false)
@@ -116,6 +120,7 @@ public class ChangeGravity : MonoBehaviour
         // 無限ジャンプ防止
         if ((col.gameObject.tag == "Ground"))
         {
+            //Debug.Log(time);
             Player.SetBool("isjump", false);
             Debug.Log("isjump   true");
             jumppingFlug = true;
