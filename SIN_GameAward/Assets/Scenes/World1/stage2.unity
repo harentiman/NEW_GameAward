@@ -6473,6 +6473,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 1493958035956162426, guid: 46e6d3a287e26e44588d6bd0acc2f536,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 791630194}
+    - target: {fileID: 1493958035956162427, guid: 46e6d3a287e26e44588d6bd0acc2f536,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2131279066}
+    - target: {fileID: 1493958035956162427, guid: 46e6d3a287e26e44588d6bd0acc2f536,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1493958035956162429, guid: 46e6d3a287e26e44588d6bd0acc2f536,
         type: 3}
       propertyPath: _audio
@@ -6538,6 +6553,12 @@ PrefabInstance:
 --- !u!1 &2131279065 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1493958035956162308, guid: 46e6d3a287e26e44588d6bd0acc2f536,
+    type: 3}
+  m_PrefabInstance: {fileID: 2131279064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2131279066 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1493958035775020994, guid: 46e6d3a287e26e44588d6bd0acc2f536,
     type: 3}
   m_PrefabInstance: {fileID: 2131279064}
   m_PrefabAsset: {fileID: 0}

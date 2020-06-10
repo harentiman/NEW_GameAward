@@ -6084,6 +6084,12 @@ RectTransform:
   m_AnchoredPosition: {x: -314.1, y: 24.970005}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1934022084 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1493958035775020994, guid: 46e6d3a287e26e44588d6bd0acc2f536,
+    type: 3}
+  m_PrefabInstance: {fileID: 2051392886}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1947603772
 GameObject:
   m_ObjectHideFlags: 0
@@ -6914,6 +6920,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 1493958035956162426, guid: 46e6d3a287e26e44588d6bd0acc2f536,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 791630194}
+    - target: {fileID: 1493958035956162427, guid: 46e6d3a287e26e44588d6bd0acc2f536,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1934022084}
+    - target: {fileID: 1493958035956162427, guid: 46e6d3a287e26e44588d6bd0acc2f536,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493958035956162429, guid: 46e6d3a287e26e44588d6bd0acc2f536,
+        type: 3}
+      propertyPath: _audio
+      value: 
+      objectReference: {fileID: 1203738186}
     - target: {fileID: 1493958035956162431, guid: 46e6d3a287e26e44588d6bd0acc2f536,
         type: 3}
       propertyPath: m_LocalPosition.x
