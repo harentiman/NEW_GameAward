@@ -42,7 +42,7 @@ public class ChangeGravity : MonoBehaviour
         if (CustomInput2.Interval_InputKeydown2(KeyCode.Space,1)|| CustomInput2.Interval_InputKeydown2("joystick button 0", 1)) // ジャンプ後、クールタイム
         {
             
-            time+= Time.deltaTime;
+            time+= Time.fixedDeltaTime;
             Debug.Log(time);
             if (jumppingFlug == true)
             {
@@ -134,8 +134,6 @@ public class ChangeGravity : MonoBehaviour
         }
     }
     
-
-
 }
 
 

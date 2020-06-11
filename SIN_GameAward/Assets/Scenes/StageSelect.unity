@@ -203,7 +203,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 41534108}
   m_OnClick:
     m_PersistentCalls:
@@ -621,7 +621,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 266705464}
   m_OnClick:
     m_PersistentCalls:
@@ -823,7 +823,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 281130842}
   m_OnClick:
     m_PersistentCalls:
@@ -1487,7 +1487,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 428287702}
   m_OnClick:
     m_PersistentCalls:
@@ -2206,7 +2206,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 646083160}
   m_OnClick:
     m_PersistentCalls:
@@ -2423,7 +2423,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 652504783}
   m_OnClick:
     m_PersistentCalls:
@@ -2717,7 +2717,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 759592922}
   m_OnClick:
     m_PersistentCalls:
@@ -3212,7 +3212,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 880762150}
   m_OnClick:
     m_PersistentCalls:
@@ -3877,7 +3877,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1029120650}
   m_OnClick:
     m_PersistentCalls:
@@ -4304,7 +4304,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1217624613}
   m_OnClick:
     m_PersistentCalls:
@@ -4880,7 +4880,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1597111785}
   m_OnClick:
     m_PersistentCalls:
@@ -5097,7 +5097,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1598612869}
   m_OnClick:
     m_PersistentCalls:
@@ -5701,7 +5701,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2096201017}
   m_OnClick:
     m_PersistentCalls:
@@ -6014,21 +6014,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage_num: 15
-  stage1: {fileID: 465324592}
-  stage2: {fileID: 41534107}
-  stage3: {fileID: 2096201016}
-  stage4: {fileID: 428287701}
-  stage5: {fileID: 1217624612}
-  stage6: {fileID: 646083159}
-  stage7: {fileID: 281130841}
-  stage8: {fileID: 759592921}
-  stage9: {fileID: 1597111784}
-  stage10: {fileID: 1598612868}
-  stage11: {fileID: 1029120649}
-  stage12: {fileID: 266705463}
-  stage13: {fileID: 880762149}
-  stage14: {fileID: 652504782}
-  stage15: {fileID: 957975803}
+  stage:
+  - {fileID: 465324592}
+  - {fileID: 41534107}
+  - {fileID: 2096201016}
+  - {fileID: 428287701}
+  - {fileID: 1217624612}
+  - {fileID: 646083159}
+  - {fileID: 281130841}
+  - {fileID: 759592921}
+  - {fileID: 1597111784}
+  - {fileID: 1598612868}
+  - {fileID: 1029120649}
+  - {fileID: 266705463}
+  - {fileID: 880762149}
+  - {fileID: 652504782}
+  - {fileID: 957975803}
 --- !u!114 &2140668421
 MonoBehaviour:
   m_ObjectHideFlags: 0
