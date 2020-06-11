@@ -637,8 +637,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 310595197}
   m_HandleRect: {fileID: 1242337068}
   m_Direction: 0
-  m_MinValue: -50
-  m_MaxValue: -30
+  m_MinValue: -30
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -3650,8 +3650,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 838984250}
   m_HandleRect: {fileID: 711813694}
   m_Direction: 0
-  m_MinValue: -50
-  m_MaxValue: 0
+  m_MinValue: -10
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 10
   m_OnValueChanged:
@@ -8329,7 +8329,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: d7d065bad7efdf84abfba467f97fd431, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
