@@ -20,5 +20,14 @@ public class Retry : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    void OnTriggerEnter(Collider col)
+    {
+        if(col.gameObject.tag == "REnemy")
+        {
+            AudioSource.PlayClipAtPoint(_audio.clip, transform.position);
+            FadeManager.Instance.LoadScene(SceneManager.GetActiveScene().name, 2);
+            Destroy(this.gameObject);
+        }
+    }
 
 }
