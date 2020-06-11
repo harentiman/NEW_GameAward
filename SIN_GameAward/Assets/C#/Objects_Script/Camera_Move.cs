@@ -20,7 +20,7 @@ public class Camera_Move : MonoBehaviour
         {
             Vector3 CameraPos = Player.transform.position;
             //カメラとプレイヤーの位置を同じにする
-            transform.position = new Vector3(CameraPos.x, 6, -15);
+            transform.position = new Vector3(CameraPos.x, 6, -13);
             transform.rotation = Quaternion.Euler(2, 0, 0);
         }
     }

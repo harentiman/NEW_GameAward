@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BGM : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     void Start()
     {
 
@@ -28,4 +28,5 @@ public class BGM : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
+
 }
