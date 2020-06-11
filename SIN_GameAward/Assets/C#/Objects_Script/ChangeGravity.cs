@@ -118,7 +118,7 @@ public class ChangeGravity : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
         // 無限ジャンプ防止
-        if ((col.gameObject.tag == "Ground"))
+        if (col.gameObject.CompareTag ("Ground")||col.gameObject.CompareTag("Box"))
         {
             //Debug.Log(time);
             Player.SetBool("isjump", false);
@@ -127,7 +127,7 @@ public class ChangeGravity : MonoBehaviour
             AudioSource.PlayOneShot(sound1);
         }
         // ゴール時、操作不能
-        if ((col.gameObject.tag == "Goal"))
+        if (col.gameObject.CompareTag("Goal"))
         {
             jumppingFlug = false;
             gravityFlug = false;
