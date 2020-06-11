@@ -81,7 +81,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   Player: {fileID: 1493958035775020994}
   sound1: {fileID: 8300000, guid: 51f12b2343d275044b1bf58221a9022b, type: 3}
-  sound2: {fileID: 8300000, guid: 34e94b19941b9df4c8c650d202879319, type: 3}
+  sound2: {fileID: 8300000, guid: f2d082c8b44b8cb47a2e37d01553b844, type: 3}
 --- !u!114 &1493958035956162427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,10 +107,11 @@ AudioSource:
   m_GameObject: {fileID: 1493958035956162308}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  OutputAudioMixerGroup: {fileID: 7850002871005431861, guid: 3e0004bf25e04d94a8416240186c9196,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: f2d082c8b44b8cb47a2e37d01553b844, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
