@@ -35,7 +35,7 @@ public class Player_Move : MonoBehaviour
             {
                 animator.SetBool("iswalk", true);
                 transform.rotation = Quaternion.Euler(new Vector3(180, 0, 0));
-                if(RightCheck==false)
+                if(LeftCheck==false)
                 {
                     velocity.x += 1;
                 }
@@ -50,7 +50,7 @@ public class Player_Move : MonoBehaviour
                 animator.SetBool("iswalk", true);
                 transform.rotation = Quaternion.Euler(new Vector3(180, 180, 0));
 
-                if (LeftCheck == false)
+                if (RightCheck== false)
                 {
                     velocity.x -= 1;
                 }

@@ -15,7 +15,7 @@ public class Retry : MonoBehaviour
     {
         if ((col.gameObject.tag == "Retrys") || (col.gameObject.tag == "Enemys"))
         {
-            AudioSource.PlayClipAtPoint(_audio.clip, transform.position);
+            //AudioSource.PlayClipAtPoint(_audio.clip, transform.position);
             FadeManager.Instance.LoadScene(SceneManager.GetActiveScene().name, 2);
             Destroy(this.gameObject);
         }
