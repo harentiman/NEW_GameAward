@@ -12,6 +12,8 @@ public class gole : MonoBehaviour
     public static string a;
     public AudioClip sound7;
     AudioSource AudioSource;
+    public static bool GameClear=false;
+
     void Start()
     {
         AudioSource = GetComponent<AudioSource>();
@@ -38,6 +40,7 @@ public class gole : MonoBehaviour
             // 最終ステージクリア後、タイトルに戻る
             if (SceneManager.GetActiveScene().buildIndex == 16)
             {
+                GameClear = true;
                 FadeManager.Instance.LoadScene("StageSelect", 2);
             }
 

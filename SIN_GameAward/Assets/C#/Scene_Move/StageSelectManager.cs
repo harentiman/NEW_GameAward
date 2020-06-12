@@ -53,6 +53,15 @@ public class StageSelectManager : MonoBehaviour
 
         }
 
+        if (gole.GameClear==true)
+        {
+            for (int i = 0; i < 15; i++)
+            {
+                stage[i + 1].interactable = true;
+
+            }
+        }
+
 
         //if (stage_num >= 2)
         //{

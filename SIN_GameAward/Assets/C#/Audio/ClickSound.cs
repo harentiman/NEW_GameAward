@@ -23,7 +23,7 @@ public class ClickSound : MonoBehaviour
         gameObject.AddComponent<AudioSource>();
 
         source.clip = sound;
-
+        source.volume = 0.6f;
         source.playOnAwake = false;
 
 
