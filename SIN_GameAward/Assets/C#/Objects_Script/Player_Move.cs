@@ -116,6 +116,8 @@ public class Player_Move : MonoBehaviour
 
     void OnCollisionStay(Collision col)
     {
+        float hirama;
+
         if (col.gameObject.CompareTag("Ground"))
         {
             Vector3 distans = this.transform.position - col.transform.position;
@@ -132,21 +134,30 @@ public class Player_Move : MonoBehaviour
                 {
                     RightCheck = true;
                 }
-                this.transform.position = new Vector3(OldPos.x, this.transform.position.y, this.transform.position.z);
+
+                if (distans.x > 0)
+                {
+                    hirama = 1;
+                }
+                else
+                {
+                    hirama = -1;
+                }
+                this.transform.position = new Vector3(((this.transform.lossyScale.x / 2) + 0.4f)*hirama+col.transform.position.x, this.transform.position.y, this.transform.position.z);
             }
             else
             {
 
             }
-            if (Mathf.Abs(distans.y) < (this.transform.lossyScale.y / 2) + 1.0 && Mathf.Abs(distans.x) < (this.transform.lossyScale.x / 2 + 0.4) * 0.8)
-            {
+            //if (Mathf.Abs(distans.y) < (this.transform.lossyScale.y / 2) + 1.0 && Mathf.Abs(distans.x) < (this.transform.lossyScale.x / 2 + 0.4) * 0.8)
+            //{
 
-                this.transform.position = new Vector3(this.transform.position.x, OldPos.y, this.transform.position.z);
-            }
-            else
-            {
+            //    this.transform.position = new Vector3(this.transform.position.x, OldPos.y, this.transform.position.z);
+            //}
+            //else
+            //{
 
-            }
+            //}
         }
 
 
