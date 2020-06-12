@@ -39,10 +39,6 @@ public class Player_Move : MonoBehaviour
                 {
                     velocity.x += 1;
                 }
-                
-
-
-
             }
             else if (Input.GetKey(KeyCode.D)|| Input.GetAxis("Horizontal") > 0.1)
             {
@@ -54,7 +50,6 @@ public class Player_Move : MonoBehaviour
                 {
                     velocity.x -= 1;
                 }
-
             }
         }
        
@@ -83,7 +78,6 @@ public class Player_Move : MonoBehaviour
             else
             {
                 animator.SetBool("iswalk", false);
-
             }
         }
         // 速度ベクトルの長さを1秒でmoveSpeedだけ進むように調整します
@@ -127,12 +121,13 @@ public class Player_Move : MonoBehaviour
             Vector3 distans = this.transform.position - col.transform.position;
            
 
-            if (Mathf.Abs(distans.x) < (this.transform.lossyScale.x/2)+0.5&&Mathf.Abs(distans.y)< (this.transform.lossyScale.y / 2 + 1.0)*0.8)
+            if (Mathf.Abs(distans.x) < (this.transform.lossyScale.x/2)+0.4&&Mathf.Abs(distans.y)< (this.transform.lossyScale.y / 2 + 1.0)*0.8)
             {
                 if (distans.x < 0)
                 {
                     LeftCheck = true;
                 }
+                
                 else if(distans.x > 0)
                 {
                     RightCheck = true;
@@ -141,17 +136,17 @@ public class Player_Move : MonoBehaviour
             }
             else
             {
-               
+
             }
-            //if (Mathf.Abs(distans.y) < (this.transform.lossyScale.y/2)+1.0&& Mathf.Abs(distans.x) < (this.transform.lossyScale.x / 2 + 0.4)*0.8)
-            //{
-                
-            //    this.transform.position = new Vector3(this.transform.position.x,OldPos.y, this.transform.position.z);
-            //}
-            //else
-            //{
-                
-            //}
+            if (Mathf.Abs(distans.y) < (this.transform.lossyScale.y / 2) + 1.0 && Mathf.Abs(distans.x) < (this.transform.lossyScale.x / 2 + 0.4) * 0.8)
+            {
+
+                this.transform.position = new Vector3(this.transform.position.x, OldPos.y, this.transform.position.z);
+            }
+            else
+            {
+
+            }
         }
 
 
