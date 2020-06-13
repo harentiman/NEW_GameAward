@@ -41,7 +41,7 @@ public class gole : MonoBehaviour
             if (SceneManager.GetActiveScene().buildIndex == 16)
             {
                 GameClear = true;
-                FadeManager.Instance.LoadScene("StageSelect", 2);
+                FadeManager.Instance.LoadScene("End", 2);
             }
 
             // 次のステージ
