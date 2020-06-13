@@ -29,15 +29,15 @@ public class StageSelectManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stage_num = PlayerPrefs.GetInt("SCORE", 0);
         //stage_num = 0;
+        stage_num = PlayerPrefs.GetInt("SCORE", 0);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        for(int i=0;i<15;i++)
+        for(int i=0;i<16;i++)
         {
             if (stage_num >= i + 1)
             {
@@ -55,7 +55,32 @@ public class StageSelectManager : MonoBehaviour
 
         if (gole.GameClear==true)
         {
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 16; i++)
+            {
+                stage[i + 1].interactable = true;
+
+            }
+        }
+
+        //for (int i = 0; i < 16; i++)
+        //{
+        //    if (stage_num >= i + 1)
+        //    {
+        //        stage[i + 1].interactable = true;
+
+        //    }
+        //    if (gole.stagenumber >= i + 2)
+        //    {
+        //        stage[i + 1].interactable = true;
+        //        PlayerPrefs.SetInt("SCORE", i + 2);
+        //        PlayerPrefs.Save();
+        //    }
+
+        //}
+
+        if (gole.GameClear == true)
+        {
+            for (int i = 0; i < 16; i++)
             {
                 stage[i + 1].interactable = true;
 
@@ -99,36 +124,36 @@ public class StageSelectManager : MonoBehaviour
         //if (stage_num >= 9)
         //{
         //    stage9.interactable = true;
-           
+
 
         //}
         //if (stage_num >= 10)
         //{
         //    stage10.interactable = true;
-            
+
 
         //}
         //if (stage_num >= 11)
         //{
         //    stage11.interactable = true;
-            
+
         //}
         //if (stage_num >= 12)
         //{
         //    stage12.interactable = true;
-            
+
 
         //}
         //if (stage_num >= 13)
         //{
         //    stage13.interactable = true;
-            
+
 
         //}
         //if (stage_num >= 14)
         //{
         //    stage14.interactable = true;
-            
+
 
         //}
         //if (stage_num >= 15)

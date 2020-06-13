@@ -13,9 +13,11 @@ public class gole : MonoBehaviour
     public AudioClip sound7;
     AudioSource AudioSource;
     public static bool GameClear=false;
+    private bool End = false;
 
     void Start()
     {
+
         AudioSource = GetComponent<AudioSource>();
     }
 
@@ -41,12 +43,18 @@ public class gole : MonoBehaviour
             if (SceneManager.GetActiveScene().buildIndex == 16)
             {
                 GameClear = true;
+                End = true;
                 FadeManager.Instance.LoadScene("End", 2);
             }
 
             // 次のステージ
             Gole = false;
-            FadeManager.Instance.LoadScene("stage" + s, 2);
+
+            if(End==false)
+            {
+                FadeManager.Instance.LoadScene("stage" + s, 2);
+
+            }
         }
     }  
 
