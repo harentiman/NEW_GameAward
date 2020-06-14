@@ -37,9 +37,7 @@ public class ClickSound : MonoBehaviour
     // Update is called once per frame
 
     void PlaySoud()
-
     {
-
         source.PlayOneShot(sound);
 
     }
