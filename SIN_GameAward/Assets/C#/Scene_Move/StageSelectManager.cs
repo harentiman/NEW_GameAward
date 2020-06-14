@@ -60,11 +60,11 @@ public class StageSelectManager : MonoBehaviour
 
         if (stage_num >= 2)
         {
-            stage1.interactable = true;
+            stage2.interactable = true;
         }
         if (stage_num >= 3)
         {
-            stage2.interactable = true;
+            stage3.interactable = true;
         }
         if (stage_num >= 4)
         {
